@@ -22,7 +22,7 @@ if (process.env.DATABASE_URL) {
 }
 const Rock = sequelize.define("rock", {
   name: Sequelize.STRING,
-  meaning: Sequelize.TEXT
+  uses: Sequelize.TEXT
 });
 
 const Property = sequelize.define("property", {

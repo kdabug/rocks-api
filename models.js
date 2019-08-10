@@ -40,14 +40,14 @@ const Chakra = sequelize.define("chakra", {
 
 Rock.belongsToMany(Property, { through: "rock_property" });
 Rock.belongsToMany(Chakra, { through: "rock_chakra" });
-Rock.belongsTo(Color, { through: "rock_color" });
+Rock.hasOne(Color, { through: "rock_color" });
 
-Color.hasMany(Rock, { through: "rock_color" });
+Color.belongsToMany(Rock, { through: "rock_color" });
 Color.belongsTo(Chakra, { through: "chakra_color" });
 
-Property.belongsToMany(Rock, { through: "rock_property" });
+Property.hasMany(Rock, { through: "rock_property" });
 
-Chakra.belongsToMany(Rock, { through: "rock_chakra" });
+Chakra.hasMany(Rock, { through: "rock_chakra" });
 Chakra.hasOne(Color, { through: "chakra_color" });
 
 module.exports = {

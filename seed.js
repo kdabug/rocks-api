@@ -31,20 +31,23 @@ const main = async () => {
   const pink = await Color.create({ name: "pink" });
   const purple = await Color.create({ name: "purple" });
   const green = await Color.create({ name: "green" });
-  const heart = await Chakra.create({ name: "heart" });
-  const throat = await Chakra.create({ name: "throat" });
-  const thirdEye = await Chakra.create({ name: "thirdEye" });
-  const crown = await Chakra.create({ name: "crown" });
-  const solarPlexis = await Chakra.create({ name: "solar plexis" });
-  const sacral = await Chakra.create({ name: "sacral" });
-  const root = await Chakra.create({ name: "root" });
+  const heart = await Chakra.create({ name: "heart", color: "green" });
+  const throat = await Chakra.create({ name: "throat", color: "blue" });
+  const thirdEye = await Chakra.create({ name: "thirdEye", color: "purple" });
+  const crown = await Chakra.create({ name: "crown", color: "green" });
+  const solarPlexis = await Chakra.create({
+    name: "solar plexis",
+    color: "yellow"
+  });
+  const sacral = await Chakra.create({ name: "sacral", color: "orange" });
+  const root = await Chakra.create({ name: "root", color: "red, brown" });
 
-  await roseQuartz.setColor(pink);
+  await roseQuartz.addColor(pink);
   await roseQuartz.setChakra(heart);
-  await roseQuartz.setProperty(selfAcceptance);
-  await amethyst.setProperty(selfAcceptance);
-  await amethyst.setProperty(sobriety);
-  await amethyst.setColor(purple);
+  await roseQuartz.addProperty(selfAcceptance);
+  await amethyst.addProperty(selfAcceptance);
+  await amethyst.addProperty(sobriety);
+  await amethyst.addColor(purple);
   await amethyst.setChakra(thirdEye);
 };
 main();

@@ -35,20 +35,19 @@ const Color = sequelize.define("color", {
 
 const Chakra = sequelize.define("chakra", {
   name: Sequelize.STRING,
-  meaning: Sequelize.TEXT
+  meaning: Sequelize.TEXT,
+  color: Sequelize.STRING
 });
 
+//one to many
+Rock.belongsTo(Chakra);
+Chakra.hasMany(Rock);
+
+//many to many
 Rock.belongsToMany(Property, { through: "rock_property" });
-Rock.belongsToMany(Chakra, { through: "rock_chakra" });
-Rock.hasOne(Color, { through: "rock_color" });
-
+Property.belongsToMany(Rock, { through: "rock_property" });
+Rock.belongsToMany(Color, { through: "rock_color" });
 Color.belongsToMany(Rock, { through: "rock_color" });
-Color.belongsTo(Chakra, { through: "chakra_color" });
-
-Property.hasMany(Rock, { through: "rock_property" });
-
-Chakra.hasMany(Rock, { through: "rock_chakra" });
-Chakra.hasOne(Color, { through: "chakra_color" });
 
 module.exports = {
   Chakra,

@@ -13,6 +13,8 @@ app.use(bodyParser.json());
 
 app.use("/rocks", rocksRouter);
 app.use("/properties", propertiesRouter);
+app.use("/chakras", chakrasRouter);
+app.use("/users", usersRouter);
 
 app.use((err, req, res, next) => {
   console.log(err);

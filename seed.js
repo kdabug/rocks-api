@@ -20,7 +20,7 @@ const main = async () => {
   const amethyst = await Rock.create({
     name: "amethyst",
     uses:
-      "strengthen family bonding, make tough decisions, healing and balancing energy"
+      "strengthen family bonding, make tough decisions, heal and balance energy"
   });
   const roseQuartz = await Rock.create({
     name: "rose quartz",

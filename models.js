@@ -49,6 +49,9 @@ Property.belongsToMany(Rock, { through: "rock_property" });
 Rock.belongsToMany(Color, { through: "rock_color" });
 Color.belongsToMany(Rock, { through: "rock_color" });
 
+User.belongsToMany(Rock, { through: 'favorite_rocks' });
+Rock.belongsToMany(User, { through: 'favorite_rocks' });
+
 module.exports = {
   Chakra,
   Color,

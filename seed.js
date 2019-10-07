@@ -31,6 +31,8 @@ const main = async () => {
   const pink = await Color.create({ name: "pink" });
   const purple = await Color.create({ name: "purple" });
   const green = await Color.create({ name: "green" });
+
+
   const heart = await Chakra.create({ name: "heart", color: "green" });
   const throat = await Chakra.create({ name: "throat", color: "blue" });
   const thirdEye = await Chakra.create({ name: "thirdEye", color: "purple" });

@@ -83,11 +83,11 @@ usersRouter.put("/:id/edit", async (req, res, next) => {
   }
 });
 
-// favorite station
+// favorite rocks
 usersRouter.get("/:id/favorites", async (req, res, next) => {
   try {
     const user = await User.findByPk(req.params.id);
-    const favorite = await user.getStations();
+    const favorite = await user.getRocks();
     res.json(favorite);
   } catch (e) {
     next(e);

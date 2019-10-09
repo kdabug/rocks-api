@@ -64,7 +64,7 @@ const Rock = sequelize.define("rock", {
     unique: true, // checks if email is already being used
     allowNull: false
   },
-  uses: Sequelize.TEXT,
+  uses: Sequelize.TEXT
 });
 
 const Property = sequelize.define("property", {
